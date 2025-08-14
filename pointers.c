@@ -77,3 +77,36 @@ void ex8_ler(int tam, int *ex8_vet)
         return  printf("%d ", ex8_vet[tam -1]);
     }
 }
+
+Registro *criarRegistro(Registro *dados, int tamanho) {
+    Registro *aux = (Registro*)malloc(sizeof(Registro) * tamanho);
+    if (!aux) {
+        printf("Erro na alocacao\n");
+        return NULL;
+    }
+
+    for (int i = 0; i < tamanho; i++) {
+        strcpy(aux[i].nome, dados[i].nome);
+        aux[i].codigo = dados[i].codigo;
+    }
+
+    return aux;
+}
+
+void Imprimir_Lista(Registro *lista, int tam){
+    if(tam == 0)
+        return;
+    else{
+
+        Imprimir_Lista(lista, tam - 1);
+        printf("Produto:%10s Codigo:%2d\n", lista[tam - 1].nome, lista[tam - 1].codigo);
+    }
+
+}
+
+Registro encontrar_id(int search_codigo, Registro *lista){
+    if(search_codigo == lista->codigo)
+         printf("Produto:%10s Codigo:%2d\n", lista->nome, lista->codigo);
+    else
+        encontrar_id(search_codigo, lista + 1);
+}

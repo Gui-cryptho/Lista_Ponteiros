@@ -6,30 +6,6 @@
 
 //Aluno: Guilherme de Sousa Brito ra:2576627
 
-/*
-typedef struct{
-    char nome[20];
-    char codigo[20];
-
-}Registro;
-
-void ex7_cadastrar(char *nome, char *codigo){
-    Registro dado;
-    strcpy(dado.nome, nome);
-    strcpy(dado.codigo, codigo);
-
-}
-
-Registro ex7_imprimir(char *codigo){
-    Registro dado;
-
-    if(*codigo == dado.codigo)
-        return dado.codigo;
-
-    ex7_imprimir(dado.codigo + 1);
-}
-*/
-
 int main()
 {
     //ex1
@@ -82,6 +58,8 @@ int main()
     printf("\nValor do ponteiro ex4_alocacao inicializado: %p", ex4_alocacao);
     printf("\n");
 
+    free(ex4_alocacao);
+
     //ex5
     printf("\nEx5:\n");
     int vet_1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
@@ -110,14 +88,39 @@ int main()
     printf("\n\n");
 
     //ex7
-    /*
-    printf("\nEx7:\n");
-    Registro tv = ex7_cadastrar("Televisao", "TV001)");
-    */
+    printf("Ex7:\n\n");
+    Registro Dado[] =
+    {
+        {"Televisao", 1},
+        {"Cadeira", 2},
+        {"Videogame", 3},
+        {"Geladeira", 4},
+        {"Notebook", 5},
+        {"Smartphone", 6},
+        {"Fogao", 7},
+        {"Microondas", 8},
+        {"Impressora", 9},
+        {"Caixa de Som", 10}
+    };
+
+    int  ex7_tamanho = sizeof(Dado)/ sizeof(Dado[0]);
+
+    Registro *lista = criarRegistro(Dado, ex7_tamanho);
+
+    Imprimir_Lista(lista, ex7_tamanho);
+
+
+    int search_codigo = 5;
+    printf("Digite o Codigo do respectivo produto:\n");
+    //Aqui por motivos de demonstracao irei deixar search_codigo = 5 mais se voce quiser digitar manualmente o codigo do produto
+    //eh so iniciar a variavel search_codigo = 0 e tirar o scanf do comentario e o codigo ira funcionar normalmente
+    //scanf("%d", &search_codigo);
+    printf("\n");
+    encontrar_id(search_codigo, lista);
+    printf("\n");
+    free(lista);
 
     //ex8
-
-
     printf("Ex8:\n");
     printf("\n");
     //Aqui por motivos de demonstracao irei deixar ex8_tamanho = 5 mais se voce quiser digitar manualmente o tamanho
@@ -140,7 +143,6 @@ int main()
     free(ex8_vet);
 
     //ex9
-
     printf("\nEx9:\n\n");
 
     //Aqui por motivos de demonstracao irei deixar m = 4 & n = 4 mais se voce quiser digitar manualmente o tamanho
