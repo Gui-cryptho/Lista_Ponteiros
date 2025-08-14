@@ -5,6 +5,7 @@
 #include "pointers.h"
 
 //Aluno: Guilherme de Sousa Brito ra:2576627
+//Aluno: Leonardo José Reis Pinto ra: 2554097
 
 int main()
 {
@@ -19,7 +20,6 @@ int main()
     */
 
     //ex2
-
     printf("Ex2:\n");
     int y, *p, x;
     y = 0;

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1755133704 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\main.c
+1755194948 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -8,7 +8,7 @@
 
 1755193690 c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\pointers.h
 
-1755193528 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\pointers.c
+1755194899 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\pointers.c
 	<stdio.h>
 	<stdlib.h>
 	"pointers.h"

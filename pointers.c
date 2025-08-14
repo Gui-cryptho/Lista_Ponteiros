@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include "pointers.h"
 
+// EX4 - Aloca dinamicamente um vetor de inteiros
+int* alocar_vetor(int tam)
+{
+    int *aux = (int*) malloc(sizeof(int) * tam);
+    if(aux == NULL)
+        printf("Erro na Alocacao");
+    return aux;
+}
+
+// EX5 - Inverte os valores de vet_1 para vet_2 recursivamente e retorna o maior valor
 int inverter_vetor(int *vet_1, int *vet_2, int tam)
 {
     if(tam < 0)
@@ -18,43 +28,7 @@ int inverter_vetor(int *vet_1, int *vet_2, int tam)
     }
 }
 
-int* alocar_vetor(int tam)
-{
-    int *aux = (int*) malloc(sizeof(int) * tam);
-    if(aux == NULL)
-        printf("Erro na Alocacao");
-    return aux;
-}
-
-int *matriz_continua(int linha, int coluna)
-{
-    int *aux_1 = (int*)malloc(linha * coluna * sizeof(int));
-    if(!aux_1)
-    {
-        printf("Erro na alocacao");
-        return 0;
-    }
-
-    return aux_1;
-}
-
-void preencher_matriz(int *matriz, int linha, int coluna, int total)
-{
-    if(total == 0)
-        return;
-    else
-    {
-        *matriz = rand() % 10;
-        printf("%2d ", *matriz);
-
-        if(total % coluna == 1)
-            printf("\n");
-
-        preencher_matriz(matriz + 1, linha, coluna, total - 1);
-
-    }
-}
-
+// EX6 - Inverte e imprime uma string recursivamente
 void inverter_string(char *string)
 {
     if(*string == '\0')
@@ -67,17 +41,7 @@ void inverter_string(char *string)
     }
 }
 
-void ex8_ler(int tam, int *ex8_vet)
-{
-    if(tam == 0)
-        return;
-    else
-    {
-        ex8_ler(tam - 1, ex8_vet);
-        return  printf("%d ", ex8_vet[tam -1]);
-    }
-}
-
+// EX7 - Cria uma cópia de um vetor de registros
 Registro *criarRegistro(Registro *dados, int tamanho) {
     Registro *aux = (Registro*)malloc(sizeof(Registro) * tamanho);
     if (!aux) {
@@ -93,6 +57,7 @@ Registro *criarRegistro(Registro *dados, int tamanho) {
     return aux;
 }
 
+// EX7 - Imprime a lista de registros
 void Imprimir_Lista(Registro *lista, int tam){
     if(tam == 0)
         return;
@@ -104,9 +69,53 @@ void Imprimir_Lista(Registro *lista, int tam){
 
 }
 
+// EX7 - Encontra um registro pelo código
 Registro encontrar_id(int search_codigo, Registro *lista){
     if(search_codigo == lista->codigo)
          printf("Produto:%10s Codigo:%2d\n", lista->nome, lista->codigo);
     else
         encontrar_id(search_codigo, lista + 1);
+}
+
+// EX8 - Imprime os elementos de um vetor usando recursão
+void ex8_ler(int tam, int *ex8_vet)
+{
+    if(tam == 0)
+        return;
+    else
+    {
+        ex8_ler(tam - 1, ex8_vet);
+        return  printf("%d ", ex8_vet[tam -1]);
+    }
+}
+
+// EX9 - Aloca dinamicamente uma matriz contínua (1 bloco de memória)
+int *matriz_continua(int linha, int coluna)
+{
+    int *aux_1 = (int*)malloc(linha * coluna * sizeof(int));
+    if(!aux_1)
+    {
+        printf("Erro na alocacao");
+        return 0;
+    }
+
+    return aux_1;
+}
+
+// EX9 - Preenche a matriz contínua com números aleatórios e imprime
+void preencher_matriz(int *matriz, int linha, int coluna, int total)
+{
+    if(total == 0)
+        return;
+    else
+    {
+        *matriz = rand() % 10;
+        printf("%2d ", *matriz);
+
+        if(total % coluna == 1)
+            printf("\n");
+
+        preencher_matriz(matriz + 1, linha, coluna, total - 1);
+
+    }
 }
