@@ -26,30 +26,33 @@ int* alocar_vetor(int tam)
     return aux;
 }
 
-int **alocar_matriz(int linha,int coluna)
+int *matriz_continua(int linha, int coluna)
 {
-    int **aux = (int**)malloc(sizeof(int*) * linha);
-    if(!aux){
+    int *aux_1 = (int*)malloc(linha * coluna * sizeof(int));
+    if(!aux_1)
+    {
         printf("Erro na alocacao");
         return 0;
     }
 
-    for(int i = 0;i < linha;i++){
-        aux[i] = (int*)malloc(sizeof(int) * coluna);
-            if(!aux[i]){
-                printf("Erro na alocacao");
-                return 0;
-            }
-    }
-
-    return aux;
+    return aux_1;
 }
 
-void free_matriz(int **mat,int m)
+void preencher_matriz(int *matriz, int linha, int coluna, int total)
 {
-    for(int i = 0; i< m; i++)
-        free(mat[i]);
-    free(mat);
+    if(total == 0)
+        return;
+    else
+    {
+        *matriz = rand() % 10;
+        printf("%2d ", *matriz);
+
+        if(total % coluna == 1)
+            printf("\n");
+
+        preencher_matriz(matriz + 1, linha, coluna, total - 1);
+
+    }
 }
 
 void inverter_string(char *string)

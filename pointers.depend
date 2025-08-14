@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1755129760 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\main.c
+1755133704 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	"pointers.h"
 
-1755102918 c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\pointers.h
+1755132818 c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\pointers.h
 
-1755129810 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\pointers.c
+1755133390 source:c:\users\guilh\onedrive\documents\new folder\ides\codeblocks\c-udemy\pointers\pointers.c
 	<stdio.h>
 	<stdlib.h>
 	"pointers.h"

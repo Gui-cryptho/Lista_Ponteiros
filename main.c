@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "pointers.h"
 
 //Aluno: Guilherme de Sousa Brito ra:2576627
@@ -28,12 +29,7 @@ Registro ex7_imprimir(char *codigo){
     ex7_imprimir(dado.codigo + 1);
 }
 */
-/*
-void preencher_matriz(int **matriz)
-{
-    if()
-}
-*/
+
 int main()
 {
     //ex1
@@ -78,7 +74,7 @@ int main()
     int ex4_n;
     printf("\nEx4:\n");
     //Aqui por motivos de demonstracao irei deixar ex4_n = 4 mais se voce quiser digitar manualmente o tamanho
-    //eh so comentar a variavel ex4_n = 4 e tirar o scanf do comentario e o codigo ira funcionar normalmente
+    //eh so iniciar a variavel ex4_n = 0 e tirar o scanf do comentario e o codigo ira funcionar normalmente
     ex4_n = 4;
     //scanf("%d", &ex4_n);
 
@@ -120,29 +116,43 @@ int main()
     */
 
     //ex8
+
+
     printf("Ex8:\n");
     printf("\n");
-    int ex8_tamanho;
-    printf("Digite o tamanho do vetor:");
-    scanf("%d", &ex8_tamanho);
+    //Aqui por motivos de demonstracao irei deixar ex8_tamanho = 5 mais se voce quiser digitar manualmente o tamanho
+    //eh so iniciar a variavel ex8_tamanho = 0 e tirar os scanf da linha 127 e 133 do comentario e o codigo ira funcionar normalmente
+    int ex8_tamanho = 5;
+    //printf("Digite o tamanho do vetor: ");
+    //scanf("%d", &ex8_tamanho);
     int *ex8_vet = alocar_vetor(ex8_tamanho);
 
-    printf("Digite os nuemeros que irao ser colocado no vetor:\n");
+    //printf("Digite os nuemeros que irao ser colocado no vetor:\n");
     for(int i = 0; i < ex8_tamanho; i++)
     {
-        scanf("%d", &ex8_vet[i]);
+        //scanf("%d", &ex8_vet[i]);
+        *(ex8_vet + i) = rand() % 10;
     }
 
     ex8_ler(ex8_tamanho,ex8_vet);
+    printf("\n");
 
     free(ex8_vet);
 
     //ex9
-    int m = 2, n = 2;
 
-    int **ex9_matriz = alocar_matriz(m, n);
-    free_matriz(ex9_matriz, m);
+    printf("\nEx9:\n\n");
 
+    //Aqui por motivos de demonstracao irei deixar m = 4 & n = 4 mais se voce quiser digitar manualmente o tamanho
+    //eh so iniciar a variavel m = 0 & n = 0 e tirar o scanf do comentario e o codigo ira funcionar normalmente
+    int m = 4, n = 4;
+    //scanf("%d", &m);
+    //scanf("%d", &n);
+
+    int *ex9_matriz = matriz_continua(m, n);
+    preencher_matriz(ex9_matriz,m,n, m * n);
+
+    free(ex9_matriz);
 
     return 0;
 }
