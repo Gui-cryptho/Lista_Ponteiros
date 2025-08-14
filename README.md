@@ -9,13 +9,18 @@
 ## Enunciados
 
 1) Sendo p um ponteiro, qual a diferença entre:
+
+
 • p++;
 • (*p)++;
 • *(p++);
 • O que quer dizer *(p+10);
 
+
 2) Escreva um comentário em cada comando de atribuição explicando o que
 ele faz e o valor da variável à esquerda do '=' após sua execução.
+
+
 int main()
 {
 int y, *p, x;
@@ -30,8 +35,11 @@ printf ("y = %d\n", y);
 return(0);
 }
 
+
 3) Verifique o programa abaixo. Encontre o seu erro e corrija-o para que
 escreva o número 10 na tela.
+
+
 #include <stdio.h>
 int main() {
  int x, *p, **q;
@@ -41,6 +49,7 @@ int main() {
  printf("\n%d\n", &q);
  return(0);
 }
+
 
 4) Crie um vetor V com n inteiros, onde n é um valor inteiro fornecido pelo
 usuário. O vetor só deve ser alocado na memória depois que o usuário
@@ -57,9 +66,13 @@ inverte_vetor(int *v1, int *v2, int n).
 
 6) Escreva um programa em linguagem C que imprimam na tela a string s na
 ordem inversa utilizando ponteiros.
+
+
 char s[10] = "abcde";
 char* cptr;
 // Seu código começa aqui
+
+
 
 7) Escrever um programa que cadastre vários produtos em uma
 estrutura/registro. Em seguida, imprima uma lista com o código e nome da
