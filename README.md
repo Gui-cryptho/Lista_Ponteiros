@@ -1,10 +1,7 @@
 # Lista de Exercícios de Ponteiros em C
-**Dupla:**
+
 - **Aluno:** Guilherme de Sousa Brito  
   **RA:** 2576627
-
-- **Aluno:** Leonardo José Reis Pinto  
-  **RA:** 2554097
 
 ## Enunciados
 
